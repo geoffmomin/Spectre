@@ -1,6 +1,14 @@
 {{!< default}}
-
-<main id="content" class="content" role="main">
-    <h1>{{tag.name}}</h1>
-    {{> "loop"}}
-</main>
+	<header class="header" role="banner">
+        <nav class="navigation" role="navigation">
+            <a href="{{@blog.url}}" class="back">&larr; Back to listing</a>
+            <div class="logo">
+                <a href="{{@blog.url}}">{{@blog.title}}</a>
+            </div>
+            <a class="feed" href="{{@blog.url}}/rss/">Subscribe</a>
+        </nav>
+    </header>
+	<main id="content" class="content" role="main">
+	    <h1>{{tag.name}}</h1>
+	    {{> "loop"}}
+	</main>

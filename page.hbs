@@ -1,14 +1,23 @@
 {{!< default}}
-
-<main id="content" class="content page" role="main">
-    <article>
-        {{#post}}
-            <header>
-                <h2>{{{title}}}</h2>
-            </header>
-            <section class="content">
-                {{content}}
-            </section>
-        {{/post}}
-    </article>
-</main>
+    <header class="header" role="banner">
+        <nav class="navigation" role="navigation">
+            <a href="{{@blog.url}}" class="back">&larr; Back to listing</a>
+            <div class="logo">
+                <a href="{{@blog.url}}">{{@blog.title}}</a>
+            </div>
+            <a class="feed" href="{{@blog.url}}/rss/">Subscribe</a>
+        </nav>
+    </header>
+    <main id="content" class="content page" role="main">
+        <article>
+            {{#post}}
+                <header>
+                    <h2>{{{title}}}</h2>
+                    {{#if image}}<img src="{{image}}" alt="">{{/if}}
+                </header>
+                <section class="content">
+                    {{content}}
+                </section>
+            {{/post}}
+        </article>
+    </main>

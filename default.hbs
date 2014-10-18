@@ -1,49 +1,46 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
+<html lang="en" dir="ltr" class="no-js">
+    <head>
+        <title>{{meta_title}}</title>
 
-    <meta charset="utf-8" />
+        <meta charset="UTF-8" />
+        <meta name="description" content="{{meta_description}}" /> 
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>{{meta_title}}</title>
-    <meta name="description" content="{{meta_description}}" />
+        <!--[if IE]>
+            <meta http-equiv="X-UA-Compatible" content="IE=8">
+        <![endif]-->
 
-    <meta name="HandheldFriendly" content="True" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/png" href="{{asset "library/images/favicon.png"}}">
 
-    <link rel="icon" type="image/png" href="{{asset "images/favicon.png"}}">
+        <link rel='stylesheet' type='text/css' href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic,700italic|Merriweather:400,400italic,700,700italic&subset=latin,vietnamese,latin-ext'>
+        <link rel="stylesheet" type="text/css" href="{{asset "library/css/styles.css"}}" />
 
-    <link rel="stylesheet" type="text/css" href="{{asset "css/reset.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/fonts.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/styles.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "css/mobile.css"}}" />
+        <!-- JavaScript -->
 
-    <!--[if lte IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+        <!--[if lt IE 9]>
+            <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
 
-    {{ghost_head}}
-</head>
-<body class="{{body_class}}">
-
-    <header class="header">
-        <h1>{{@blog.title}}</h1>
-        <a class="subscribe" href="{{@blog.url}}/rss/">Subscribe</a>
-    </header>
-
-    {{{body}}}
-
-    <footer class="footer">
-        <section class="about">
-            <h2>{{@blog.title}}</h2>
-            <p>{{@blog.description}}</p>
-        </section>
-        <section class="copy">
-            <p><a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}}</p>
-            <p>Created by <a href="http://mccartney.io">Richard McCartney</a>. Powered by <a href="http://ghost.org">Ghost</a></p>
-        </section>
-    </footer>
-
-    {{ghost_foot}}
-
-</body>
+        {{ghost_head}}
+    </head>
+    <body class="{{body_class}}">
+        {{{body}}}
+        <footer class="footer" role="contentinfo">
+            <section class="about">
+                <h2>{{@blog.title}}</h2>
+                <p>{{@blog.description}}</p>
+            </section>
+            <section class="credentials">
+                <small class="copy">
+                    <a href="{{@blog.url}}/">{{@blog.title}}</a> &copy; {{date format="YYYY"}}
+                </small>
+                <small class="credits">
+                    Created by <a href="http://mccartney.io">Richard McCartney</a>. Powered by <a href="http://ghost.org">Ghost</a>.
+                </small>
+            </section>
+        </footer>
+        {{ghost_foot}}
+    </body>
 </html>

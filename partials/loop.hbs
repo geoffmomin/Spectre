@@ -1,18 +1,17 @@
-{{#foreach posts}}
-    <article class="post-listing">
+<div class="listing">
+    {{#foreach posts}}
+    <article class="post">
         <header>
             {{tags}}
-            {{content words="0"}}
             <h2>
                 <a href="{{url}}">{{{title}}}</a>
             </h2>
+            {{#if image}}<img src="{{image}}" alt="">{{/if}}
         </header>
-        <section>
-            <p>{{excerpt words="30"}}</p>
-        </section>
+        {{excerpt words="30"}}
         <footer>
             <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
-            <span role="author">
+            <span class="author" role="author">
                 {{#if author.image}}
                     <img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />
                 {{/if}}
@@ -20,6 +19,6 @@
             </span>
         </footer>
     </article>
-{{/foreach}}
-
-{{pagination}}
+    {{/foreach}}
+    {{pagination}}
+</div>
