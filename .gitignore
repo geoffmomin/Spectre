@@ -8,3 +8,5 @@
 ## Sass
 .sass-cache
 *.css.map
+config
+config/compass.rb
